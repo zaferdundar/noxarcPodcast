@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="podcast.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <div class="podcastContainer">
+        <div class="podcastTop" style="background: url(playerBg.png); width: 375px; height: 374px;">
+            <button>
+                <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            <button >
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="podcastPlayer">
+                <div class="podcastHeader">
+                    <h1 id="title">
+
+                    </h1>
+                    <span id="author">
+
+                    </span>
+                </div>
+                <div class="playerBtns">
+                    <button id="seekLeft">
+                        <i class="fa-solid fa-rotate-left"></i>
+                    </button>
+                    <button class="pauseBtn">
+                        <i class="fa-solid fa-play"></i>
+                    </button>
+                    <button id="seekRight">
+                        <i class="fa-solid fa-rotate-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="podcastBottom" style="background: url(secondBg.png);">
+            <div class="podcastBottomTop">
+                <div class="like">
+                    <button class="likeBtn">
+                        <i class="fa-solid fa-thumbs-up"></i>
+                    </button>
+                    <span id="like">
+
+                    </span>
+                </div>
+                <span id="duration">
+
+                </span>
+                <div class="dislike">
+                    <span id="dislike">
+
+                    </span>
+                    <button class="dislikeBtn">
+                        <i class="fa-solid fa-thumbs-down"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="bottomBot">
+                <div class="bottomBotBtns">
+                    <div class="soundWave">
+                        <button>
+                            <img src="icon.png">
+                        </button>
+                        <span>Episode 2</span>
+                    </div>
+                    <div class="dSize">
+                        <button>
+                            <i class="fa-solid fa-download"></i>
+                        </button>
+                        <span id="fSize">
+
+                        </span>
+                    </div>
+                    <button class="moreBtn">
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </button>
+                </div>
+                <div class="podcastDesc">
+                    <span id="desc">
+
+                    </span>
+                    <audio controls="false" id="player" style="display: none">
+                        <source src="https://www.singlix.com/mp3/Elvis_Presley/Little_Less_Conversation.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const params = new Proxy(new URLSearchParams(window.location.search), {
+        get: (searchParams, prop) => searchParams.get(prop),
+    });
+    let value = JSON.parse(params.data)
+    console.log(value)
+
+    document.getElementById("desc").innerHTML = value.description
+    document.getElementById("like").innerHTML = value.likes
+    document.getElementById("dislike").innerHTML = value.dislikes
+    document.getElementById("fSize").innerHTML = value.file_size + "mb"
+    document.getElementById("title").innerHTML = value.title
+    document.getElementById("author").innerHTML = value.author
+
+//https://www.singlix.com/mp3/Elvis_Presley/Little_Less_Conversation.mp3
+
+    const playBtn = document.querySelector(".pauseBtn")
+    const player = document.getElementById("player")
+    const seekLeft = document.getElementById("seekLeft")
+    const seekRight = document.getElementById("seekRight")
+    const duration = document.getElementById("duration")
+
+
+
+
+    playBtn.addEventListener("click", () => {
+        if (player.paused) {
+            player.play()
+            playBtn.innerHTML = `<i class="fa-solid fa-pause"></i>`
+        }
+        else {
+            player.pause()
+            playBtn.innerHTML = `<i class="fa-solid fa-play"></i>`
+
+        }
+    })
+
+    seekLeft.addEventListener("click", () => {
+        player.currentTime -= 15;
+    })
+
+    seekRight.addEventListener("click", () => {
+        player.currentTime += 15;
+    })
+
+    setInterval(() => {
+        const currentTime = Number(player.currentTime.toFixed(0))
+        duration.innerHTML = Math.floor(currentTime / 60) + ":" + (currentTime % 60 ? currentTime % 60 : '00')
+    },1000)
+
+
+
+
+</script>
+
+</body>
+</html>

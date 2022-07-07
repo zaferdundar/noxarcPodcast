@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #08111B;
+    color: #fff;
+}
+.container {
+    display: flex;
+    justify-content: center;
+}
+.podcastContainer {
+    width: 375px;
+    height: 737px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid gray;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+.podcastTop {
+    font-size: 20px;
+    position: relative;
+    padding-top: 50px;
+}
+
+.fa-arrow-left {
+    position: absolute;
+    top: 66px;
+    left: 34px;
+}
+
+.fa-bars {
+    position: absolute;
+    right: 34px;
+    top: 66px;
+}
+
+.pauseBtn {
+    background-color: #FF334B;
+    border: none;
+    color: #fff;
+    border-radius: 50%;
+    width: 51px;
+    height: 51px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+
+}
+
+.podcastPlayer h1 {
+    font-size: 24px;
+}
+
+.podcastPlayer span {
+    font-size: 14px;
+    color: #898F97;
+}
+
+.podcastPlayer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.playerBtns {
+    margin-top: 20px;
+}
+
+.podcastHeader {
+    margin-top: 20px;
+}
+
+.podcastBottomTop {
+    display: flex;
+    justify-content: space-between;
+}
+
+.podcastBottomTop button {
+    background: #898F9726;
+    border-radius: 50%;
+    width: 31px;
+    height: 31px;
+    font-size: 12px;
+}
+
+.likeBtn, .dislikeBtn {
+    transition: 1s;
+
+}
+.likeBtn:hover {
+    color: green;
+    background: #45922126;
+}
+
+.dislikeBtn:hover {
+    color: red;
+    background: #2F0606;
+}
+
+.podcastBottom {
+    padding: 15px;
+    box-shadow: rgba(255, 255, 255, 0.2) 0px -30px 40px -7px;
+    border-radius: 20px;
+}
+
+.bottomBot button {
+    color: #fff;
+}
+
+.bottomBotBtns {
+    display: flex;
+    position: relative;
+}
+
+.bottomBotBtns span {
+    font-size: 12px;
+}
+
+.bottomBot {
+    margin-top: 30px;
+}
+
+
+.podcastDesc {
+    font-size: 13px;
+    color: #898F97;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.moreBtn {
+    position: absolute;
+    right: 0;
+}
+
+
+

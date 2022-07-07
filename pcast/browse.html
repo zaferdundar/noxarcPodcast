@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="browse.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <div class="browseContainer">
+        <div class="pcastText">
+            <div class="boxes">
+                <div class="box1"></div>
+                <div class="box2"></div>
+                <div class="box3"></div>
+                <i class="fa-solid fa-microphone-lines" style="color: #fff"></i>
+            </div>
+            <span>pcast</span>
+        </div>
+        <div class="browseText">
+            <h1>Browse</h1>
+        </div>
+        <div class="searchArea">
+            <input type="text" placeholder="Search" class="searchInput">
+            <i class="fa-solid fa-magnifying-glass" style="color: #fff"></i>
+        </div>
+        <div class="categories">
+            <ul>
+                <li>
+                    <div class="iconsBg">
+                        <i class="fa-solid fa-music" style="color: #fff"></i>
+                    </div>
+                    <span>Categories</span>
+                </li>
+                <li>
+                    <div class="iconsBg">
+                        <i class="fa-solid fa-globe" style="color: #fff"></i>
+                    </div>
+                    <span>Topics</span>
+                </li>
+                <li>
+                    <div class="iconsBg">
+                        <i class="fa-solid fa-face-smile" style="color: #fff"></i>
+                    </div>
+                    <span>Authors</span>
+                </li>
+                <li>
+                    <div class="iconsBg">
+                        <i class="fa-solid fa-microphone-lines" style="color: #fff"></i>
+                    </div>
+                    <span>Podcast</span>
+                </li>
+            </ul>
+        </div>
+        <span id="resultLength"></span>
+
+        <div class="podcastList">
+            <ul id="searchResult">
+
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script src="browse.js"></script>
+</body>
+</html>
